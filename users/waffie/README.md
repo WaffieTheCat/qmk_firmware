@@ -4,9 +4,9 @@ Waffie QMK Userspace
 Defines some custom keycodes, they are used mainly for typing IT characters while using a standard ANSI layout with US keycaps.
 
 ## Additional Notes
-Requires windows "United States (International Alternate)" layout or any other layout that switches dead keys on AltGr in order to work properly.
+Requires windows _United States (International Alternate)_ layout or any other layout that switches dead keys on AltGr in order to work properly.
 Can be used with the standard US INTERNATIONAL keyboard layout but you will have dead keys that are pretty annoying.
-Download Link: (https://keyboards.jargon-file.org/)
+Download Link: https://keyboards.jargon-file.org/
 
 ## Custom Keycodes
 ----
@@ -24,7 +24,7 @@ Download Link: (https://keyboards.jargon-file.org/)
 ----
 ### NKRO Toggle RGB lighting layer
 Gives a visual advice when you toggle NKRO (RGB lights will flash red or green depending from the NKRO status).
-Needs `RGBLIGHT_LAYERS`, `RGBLIGHT_LAYER_BLINK` and `RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF`
+Requires `RGBLIGHT_LAYERS`, `RGBLIGHT_LAYER_BLINK` and `RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF`
 
 ### Tap Dance for Reset and CAPS
 - `TD(RST)` 4+ taps to reset EEPROM
