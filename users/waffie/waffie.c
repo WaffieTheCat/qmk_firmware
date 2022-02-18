@@ -57,12 +57,12 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
 
-      case IT_EACC:
+       case IT_EACC:
         if (record->event.pressed){
-          if (get_mods() & MOD_BIT(KC_LSHIFT)){
-            unregister_code16(KC_LSHIFT);
+          if (mod_state & MOD_MASK_SHIFT){
+            del_mods(MOD_MASK_SHIFT);
             tap_code16(RALT(KC_E));
-            register_code16(KC_LSHIFT);
+            set_mods(mod_state);
           } else {
             SEND_STRING(SS_RALT("`")SS_DELAY(75)"e");
           }
