@@ -32,7 +32,7 @@ Requires `RGBLIGHT_LAYERS`, `RGBLIGHT_LAYER_BLINK` and `RGBLIGHT_LAYERS_OVERRIDE
 
 
 ## License
-_Copyright 2022 Waffie_
+_Copyright 2022 Waffie (@WaffieTheCat)_
 
 _This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
