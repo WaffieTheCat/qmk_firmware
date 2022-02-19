@@ -54,7 +54,11 @@ qk_tap_dance_action_t tap_dance_actions[] = {
  * |  S T A R T   O F   M A C R O S   A N D   A C C E N T E D   V O W E L S   |
  * └──────────────────────────────────────────────────────────────────────────┘
  */
+
+uint8_t mod_state;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    // Store the current modifier state in the variable for later reference
+    mod_state = get_mods();
     switch (keycode) {
 
        case IT_EACC:
@@ -72,10 +76,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
       case IT_AACC:
         if (record->event.pressed){
-          if (get_mods() & MOD_BIT(KC_LSHIFT)){
-            unregister_code16(KC_LSHIFT);
+          if (mod_state & MOD_MASK_SHIFT){
+            del_mods(MOD_MASK_SHIFT);
             tap_code16(RALT(KC_A));
-            register_code16(KC_LSHIFT);
+            set_mods(mod_state);
           } else {
             SEND_STRING(SS_RALT("`")SS_DELAY(75)"a");
           }
@@ -85,10 +89,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
       case IT_IACC:
         if (record->event.pressed){
-          if (get_mods() & MOD_BIT(KC_LSHIFT)){
-            unregister_code16(KC_LSHIFT);
+          if (mod_state & MOD_MASK_SHIFT){
+            del_mods(MOD_MASK_SHIFT);
             tap_code16(RALT(KC_I));
-            register_code16(KC_LSHIFT);
+            set_mods(mod_state);
           } else {
             SEND_STRING(SS_RALT("`")SS_DELAY(75)"i");
           }
@@ -98,10 +102,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
       case IT_OACC:
         if (record->event.pressed){
-          if (get_mods() & MOD_BIT(KC_LSHIFT)){
-            unregister_code16(KC_LSHIFT);
+          if (mod_state & MOD_MASK_SHIFT){
+            del_mods(MOD_MASK_SHIFT);
             tap_code16(RALT(KC_O));
-            register_code16(KC_LSHIFT);
+            set_mods(mod_state);
           } else {
             SEND_STRING(SS_RALT("`")SS_DELAY(75)"o");
           }
@@ -111,10 +115,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
       case IT_UACC:
         if (record->event.pressed){
-          if (get_mods() & MOD_BIT(KC_LSHIFT)){
-            unregister_code16(KC_LSHIFT);
+          if (mod_state & MOD_MASK_SHIFT){
+            del_mods(MOD_MASK_SHIFT);
             tap_code16(RALT(KC_U));
-            register_code16(KC_LSHIFT);
+            set_mods(mod_state);
           } else {
             SEND_STRING(SS_RALT("`")SS_DELAY(75)"u");
           }
